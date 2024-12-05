@@ -16,7 +16,7 @@ data <- data[, -1]  # 移除基因名称列
 data <- data[rowSums(data != 0) > 0, ]
 
 # 提取分组信息
-group <- ifelse(grepl("^control", colnames(data)), "Healthy", "PTSD")  # 根据列名生成分组信息
+group <- ifelse(grepl("^control", colnames(data)), "Control", "Treated")  # 根据列名生成分组信息
 
 # 确保数据为数值型矩阵
 data <- as.matrix(data)
@@ -70,5 +70,5 @@ ggplot(pca_data, aes(x = PC1, y = PC2, color = Group, label = Sample)) +
     plot.subtitle = element_text(hjust = 0.5)
   ) +
   # 设置颜色和填充
-  scale_color_manual(values = c("PTSD" = "red", "Healthy" = "blue")) +
-  scale_fill_manual(values = c("PTSD" = "red", "Healthy" = "blue"))
+  scale_color_manual(values = c("Control" = "red", "Treated" = "blue")) +
+  scale_fill_manual(values = c("Control" = "red", "Treated" = "blue"))
