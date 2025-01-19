@@ -1,11 +1,12 @@
 # 安装必要的包
-install.packages(c("readr", "ggplot2", "vegan"))  # 安装所需包
+# install.packages(c("readr", "ggplot2", "vegan"))
+
 library(readr)
 library(ggplot2)
 library(vegan)
 
 # 1. 读取数据
-file_path <- "C:/Users/Lamarck/Desktop/pca.csv"  # 替换为实际文件路径
+file_path <- "C:/Users/Lamarck/Desktop/pca.csv"  # 读取基因表达文件
 data <- read_csv(file_path)
 
 # 设置基因名称为行名，并移除第一列
